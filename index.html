@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label style="margin: auto">Tu muon tra nghia: &nbsp<input id="inp" type="text" style="text-align: right"> </label>
+<br>
+<input type="button"  style="margin: auto" onclick="trans()" value="Translate">
+<br>
+<output id="result" style="margin: auto"></output>
+</body>
+<script>
+    let e = ["pen","notebook","condom","lube","computer","CPU"];
+    let v = ["Bút","Cuốn sổ","BCS","Chất bôi trơn","Máy vi tính","Bộ xử lý trung tâm"];
+    function trans() {
+        let check =0;
+        let inp =document.getElementById("inp").value;
+        for(i=0;i<e.length;i++){
+            if(inp.toLowerCase()==e[i]){
+                document.getElementById("result").value = "Nghia cua tu '"+inp+"' la: "+v[i];
+                check =1;
+                break;
+            }
+        }
+        if(check == 0){
+            document.getElementById("result").value="Hien tai chua co tu do trong tu dien";
+        }
+    }
+</script>
+</html>
